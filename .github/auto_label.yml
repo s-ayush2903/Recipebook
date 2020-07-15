@@ -1,0 +1,15 @@
+# For PR label bot(auto_label_bot)
+labels: [fix, chore]
+labelMapping:
+  feat: [feature]
+  refactor: [chore, refactor]
+  chore(refactor): [chore, refactor]
+  chore(deps): [dependencies]
+  docs: [docs]
+  chore(docs): [docs]
+  docs(api): [docs, api]
+  test: [testing, TDD]
+  chore(ci): [chore, tools, ci]
+  chore(tools): [chore, tools]
+  chore(release): [chore, release]
+  TDD: [test, tests, testing]

@@ -1,0 +1,16 @@
+#semantic qualifiers for the bot down here
+types:
+  - feat
+  - fix
+  - docs
+  - style
+  - refactor
+  - perf
+  - test
+  - tests
+  - build
+  - ci
+  - chore
+  - revert
+  - choreUtils
+  - CI

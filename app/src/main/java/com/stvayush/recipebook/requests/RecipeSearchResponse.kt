@@ -15,9 +15,9 @@ class RecipeSearchResponse {
     @Expose
     private val count: Int? = null
 
-    @SerializedName(value = "recipe")
+    @SerializedName(value = "recipes")
     @Expose
-    private var recipesList: List<Recipe>? = null
+    private val recipesList: List<Recipe>? = null
 
     fun getCount(): Int? {
         return count

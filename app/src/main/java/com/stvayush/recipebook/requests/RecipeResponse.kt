@@ -10,7 +10,7 @@ import com.stvayush.recipebook.datamodelling.Recipe
  */
 class RecipeResponse {
 
-    @SerializedName("recipe")
+    @SerializedName("recipes")
     @Expose
     private var recipe: Recipe? = null
 

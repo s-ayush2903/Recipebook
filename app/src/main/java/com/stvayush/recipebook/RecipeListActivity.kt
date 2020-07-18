@@ -47,12 +47,15 @@ class RecipeListActivity : BaseActivity() {
                 response: Response<RecipeSearchResponse>
             ) {
                 Log.d(TAG, "onResponse: Server Response:-> $response")
-//                if (response.code() == 200) {
-//                    val recipes: List<Recipe> = ArrayList(response.body().getRecipes())
-//                    for (recipe2: Recipe in recipes) {
-//                        Log.d(TAG, "onResponse: " + recipe2.copy())
-//                    }
-//                }
+                if (response.code() == 200) {
+                    val recipes = response.body()?.getRecipes()
+                    Log.d(TAG, "onResponse: $recipes")
+                    if (recipes != null) {
+                        for (recipe2: Recipe in recipes) {
+                            Log.d(TAG, "onResponse: " + recipe2.copy())
+                        }
+                    }
+                }
             }
         })
 

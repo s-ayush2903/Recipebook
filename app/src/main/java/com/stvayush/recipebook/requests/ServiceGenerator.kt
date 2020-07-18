@@ -16,5 +16,5 @@ object ServiceGenerator {
     private var retrofit = retrofitBuilder.build()
 
     private var recipeApi = retrofit.create(RecipeApi::class.java)
-    public var getRecipeApi = recipeApi
+    var getRecipeApi = recipeApi
 }

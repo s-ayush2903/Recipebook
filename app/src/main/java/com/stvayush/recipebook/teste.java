@@ -20,6 +20,4 @@ class teste  {
         progressBar.setVisibility(visible ? View.VISIBLE : View.INVISIBLE);
     }
 
-    List<Recipe> recipes = new ArrayList<>(response.body().getRecipes());
-
 }

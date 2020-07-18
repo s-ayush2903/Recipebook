@@ -19,6 +19,5 @@ class test{
 //    fun showProgressBar(visible: Boolean) {
 //        progressBar!!.visibility = if (visible) View.VISIBLE else View.INVISIBLE
 //    }
-    List<Recipe> recipes = new ArrayList<>(response.body().getRecipes());
-    List<Recipe> recipes = new ArrayList<>(response.body().getRecipes());
+
 }

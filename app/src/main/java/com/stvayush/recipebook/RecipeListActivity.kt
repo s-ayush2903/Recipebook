@@ -39,7 +39,7 @@ class RecipeListActivity : BaseActivity() {
             override fun onFailure(call: Call<RecipeSearchResponse>, t: Throwable) {
                 Log.d(TAG, "onFailure: Failed")
                 Log.d(TAG, "onFailure: " + t.message)
-            
+
             }
 
             override fun onResponse(

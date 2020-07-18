@@ -13,5 +13,31 @@ android:
 
 before_install:
   - yes | sdkmanager "platforms;android-29"
+jobs:
+  include:
+     - stage: build
+       script:
+         ./gradlew -Pci --console=plain :app:lintDebug -PbuildDir=lint
 
-script: "./gradlew build --stacktrace"
+    # Make Project
+     - stage: build
+       script:
+         ./gradlew assembleDebug
+#       artifacts:
+#        paths:
+#          - app/build/outputs/
+#          - req.json
+
+     - stage: test
+       script:
+          ./gradlew -Pci --console=plain :app:testDebug
+
+    # Deployment to appetize.io, go through readme for more info
+    #deploy:
+    #  interruptible: true
+    #  stage: deploy
+    #  dependencies:
+    #    - assembleDebug
+    #  script:
+    #    - 'curl -s -X POST -H "Content-Type: application/json" -d @req.json https://$APPETIZE_API@api.appetize.io/v1/apps/$APPETIZE_KEY > response.json'
+

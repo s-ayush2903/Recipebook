@@ -1,0 +1,46 @@
+language: android
+jdk: oraclejdk8
+sudo: required
+android:
+  components:
+    - tools
+    - extra-android-support
+    - extra-google-google_play_services
+    - extra-android-m2repository
+    - extra-google-m2repository
+    - build-tools-29.0.3
+    - android-29
+
+before_install:
+  - yes | sdkmanager "platforms;android-29"
+
+jobs:
+  include:
+     - stage: lint
+       name: "Lint Check"
+       script:
+         ./gradlew -Pci --console=plain :app:lintDebug -PbuildDir=lint
+
+    # Make Project
+     - stage: build
+       name : "Make Project"
+       script:
+         ./gradlew assembleDebug
+       artifacts:
+        paths:
+          - app/build/outputs/
+          - req.json
+
+     - stage: test
+       name: "Run All Tests"
+       script:
+          ./gradlew -Pci --console=plain :app:testDebug
+
+    # Deployment to appetize.io, go through readme for more info
+     - stage: deploy
+       name: "Deployment"
+       dependencies:
+         - assembleDebug
+       script:
+         - 'curl -s -X POST -H "Content-Type: application/json" -d @req.json https://$APPETIZE_API@api.appetize.io/v1/apps/$APPETIZE_KEY > response.json'
+

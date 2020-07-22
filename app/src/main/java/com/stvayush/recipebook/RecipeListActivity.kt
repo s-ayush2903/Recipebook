@@ -48,13 +48,14 @@ class RecipeListActivity : BaseActivity() {
             ) {
                 Log.d(TAG, "onResponse: Server Response:-> $response")
                 if (response.code() == 200) {
-                    val recipes = response.body()?.getRecipes()
+                    val recipes = response.body()?.recipesList
+                    findViewById<Button>(R.id.test_button).text = recipes?.toString()
                     Log.d(TAG, "onResponse: $recipes")
-                    if (recipes != null) {
-                        for (recipe2: Recipe in recipes) {
-                            Log.d(TAG, "onResponse: " + recipe2.copy())
-                        }
-                    }
+//                    if (recipes != null) {
+//                        for (recipe2: Recipe in recipes) {
+//                            Log.d(TAG, "onResponse: " + recipe2.copy())
+//                        }
+//                    }
                 }
             }
         })

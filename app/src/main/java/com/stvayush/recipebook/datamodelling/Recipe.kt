@@ -16,4 +16,3 @@ data class Recipe(
     val social_rank: Float?
 ) : Parcelable {
 }
-

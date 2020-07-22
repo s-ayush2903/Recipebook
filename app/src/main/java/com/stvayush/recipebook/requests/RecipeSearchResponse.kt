@@ -13,18 +13,12 @@ class RecipeSearchResponse {
 
     @SerializedName("count")
     @Expose
-    private val count: Int? = null
+    val count: Int? = null
 
     @SerializedName(value = "recipes")
     @Expose
-    private val recipesList: List<Recipe>? = null
+    val recipesList: List<Recipe>? = null
 
-    fun getCount(): Int? {
-        return count
-    }
-    fun getRecipes(): List<Recipe>? {
-        return recipesList
-    }
     override fun toString(): String {
         return "RecipeSearchResponse(count=$count, recipesList=$recipesList)"
     }

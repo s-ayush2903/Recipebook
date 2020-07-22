@@ -10,11 +10,11 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object ServiceGenerator {
 
-    var retrofitBuilder = Retrofit.Builder()
+    var retrofitBuilder: Retrofit.Builder = Retrofit.Builder()
         .baseUrl(Constants.BASE_URL)
         .addConverterFactory(GsonConverterFactory.create())
     private var retrofit = retrofitBuilder.build()
 
     private var recipeApi = retrofit.create(RecipeApi::class.java)
-    var getRecipeApi = recipeApi
+    var getRecipeApi: RecipeApi = recipeApi
 }

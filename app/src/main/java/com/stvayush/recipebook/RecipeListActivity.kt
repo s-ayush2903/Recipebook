@@ -52,14 +52,14 @@ class RecipeListActivity constructor() : BaseActivity() {
             ) {
                 Log.d(TAG, "onResponse: Server Response:-> $response")
                 if (response.code() == 200) {
-                    val recipes = response.body()?.recipesList
-                    findViewById<Button>(R.id.test_button).text = recipes?.toString()
-                    Log.d(TAG, "onResponse: $recipes")
-//                    if (recipes != null) {
-//                        for (recipe2: Recipe in recipes) {
-//                            Log.d(TAG, "onResponse: " + recipe2.copy())
-//                        }
-//                    }
+                    val recipes =response.body()?.recipesList
+//                    val recipesList = arrayListOf(response.body()?.recipesList)
+                    val recipesList = (response.body()?.recipesList)
+                    findViewById<Button>(R.id.test_button).text = recipes.toString()
+                    if (recipesList != null) {
+                        for(reicp in recipesList)
+                            Log.d(TAG, "onResponse: " + reicp.title)
+                    }
                 }
             }
         })

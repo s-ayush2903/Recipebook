@@ -60,6 +60,15 @@ dependencies {
   testImplementation "androidx.arch.core:core-testing:$archVersion"
 
 
+  // ktx
+  implementation "androidx.fragment:fragment-ktx:1.2.5"
+  implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycleVersion"
+
+  def navKtxVersion = "2.3.0"
+  implementation "androidx.navigation:navigation-runtime-ktx:$navKtxVersion"
+  implementation "androidx.navigation:navigation-fragment-ktx:$navKtxVersion"
+  implementation "androidx.navigation:navigation-ui-ktx:$navKtxVersion"
+
   testImplementation 'junit:junit:4.12'
   androidTestImplementation 'androidx.test.ext:junit:1.1.1'
   androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'

@@ -8,15 +8,19 @@ import com.stvayush.recipebook.datamodelling.Recipe
 import com.stvayush.recipebook.requests.RecipeApi
 import com.stvayush.recipebook.requests.RecipeSearchResponse
 import com.stvayush.recipebook.requests.ServiceGenerator
+import dagger.hilt.android.AndroidEntryPoint
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import javax.inject.Inject
 
-class RecipeListActivity : BaseActivity() {
+@AndroidEntryPoint
+class RecipeListActivity constructor() : BaseActivity() {
+    @Inject lateinit var recipeApi: RecipeApi  // this is just for testing if the injection was being done correctly or not, later this will be moved to repo
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_recipe_list)
-
         findViewById<Button>(R.id.test_button).setOnClickListener {
                 testCalls()
 //            if (progressBar!!.visibility == View.VISIBLE) {
@@ -32,7 +36,7 @@ class RecipeListActivity : BaseActivity() {
 
     private fun testCalls() {
 
-        val recipeApi: RecipeApi = ServiceGenerator.getRecipeApi
+//        val recipeApi: RecipeApi = ServiceGenerator.getRecipeApi
         val recipeSearchResponseCall: Call<RecipeSearchResponse> =
             recipeApi.searchRecipe("chicken breast", 1)
         recipeSearchResponseCall.enqueue(object : Callback<RecipeSearchResponse> {

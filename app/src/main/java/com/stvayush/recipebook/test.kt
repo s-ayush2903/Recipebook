@@ -5,7 +5,7 @@ import androidx.fragment.app.Fragment
 /**
  * Authored by s-ayush2903 on 16/7/20
  */
-class test: Fragment(){
+class test{
 //abstract class BaseActivity : AppCompatActivity() {
 //    var progressBar: ProgressBar? = null
 //    override fun setContentView(layoutResID: Int) {

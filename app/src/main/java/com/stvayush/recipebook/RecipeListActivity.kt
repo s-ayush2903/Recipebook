@@ -10,7 +10,7 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class RecipeListActivity : BaseActivity() {
-    private val recipeListViewModel: RecipeListViewModel by viewModels()
+    private val recipeListViewModel: RecipeListViewModel by viewModels() // this is being injected not just normally instantiated
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,7 +21,7 @@ class RecipeListActivity : BaseActivity() {
     }
 
     private fun testCalls() {
-        recipeListViewModel.testSearch("breast chicken", 2).observe(this, Observer {
+        recipeListViewModel.testSearch("chicken breast", 1).observe(this, Observer {
             when (it) {
                 is ApiEmptyResponse -> {
                     Log.d(TAG, "onCreate: EMPTY RESPONSE!!!")
@@ -30,7 +30,12 @@ class RecipeListActivity : BaseActivity() {
                     Log.d(TAG, "onCreate-API_ERROR_RESPONSE: ${it.errorMessage}")
                 }
                 is ApiSuccessResponse -> {
-                    Log.d(TAG, "onCreate:API_SUCCESS_RESPONSE: ${it.body}")
+                    Log.d(TAG, "onCreate:API_SUCCESS_RESPONSE: ${it.body.recipesList}")
+                    val resp = it.body.recipesList
+                    if (resp != null) {
+                        for (reicp in resp)
+                            Log.d(TAG, "testCalls:PRINTING RECIPES TITLE -> ${reicp.title}")
+                    }
                 }
             }
         })

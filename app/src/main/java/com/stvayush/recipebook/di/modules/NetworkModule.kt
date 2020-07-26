@@ -4,6 +4,7 @@ import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.stvayush.recipebook.requests.RecipeApi
 import com.stvayush.recipebook.utils.Constants
+import com.stvayush.recipebook.utils.LiveDataCallAdapterFactory
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -31,6 +32,7 @@ object NetworkModule {
     fun provideRetrofitService(gson: Gson): Retrofit.Builder =
         Retrofit.Builder()
             .baseUrl(Constants.BASE_URL)
+            .addCallAdapterFactory(LiveDataCallAdapterFactory())
             .addConverterFactory(GsonConverterFactory.create(gson))
 
     @Singleton

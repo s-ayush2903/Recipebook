@@ -57,5 +57,3 @@ sealed class GenericApiResponse<T> {
         }
     }
 }
-
-

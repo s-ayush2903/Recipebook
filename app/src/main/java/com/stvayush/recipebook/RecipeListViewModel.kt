@@ -19,4 +19,3 @@ class RecipeListViewModel @ViewModelInject constructor(private val repository: R
     }
 
 }
-

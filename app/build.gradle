@@ -23,6 +23,10 @@ android {
     targetCompatibility JavaVersion.VERSION_1_8
   }
 
+  kotlinOptions {
+    jvmTarget = JavaVersion.VERSION_1_8.toString()
+  }
+
   buildTypes {
     release {
       minifyEnabled false
@@ -49,6 +53,9 @@ dependencies {
   // def hiltVersion = "2.28-alpha"
   implementation "com.google.dagger:hilt-android:$hiltVersion"
   kapt "com.google.dagger:hilt-android-compiler:$hiltVersion"
+  implementation 'androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha02'
+  kapt 'androidx.hilt:hilt-compiler:1.0.0-alpha02'
+
 
 
   // ViewModel & LiveData

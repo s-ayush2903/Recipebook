@@ -1,4 +1,4 @@
-package com.stvayush.recipebook
+package com.stvayush.recipebook.core
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp

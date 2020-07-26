@@ -2,7 +2,7 @@ package com.stvayush.recipebook.di.modules
 
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
-import com.stvayush.recipebook.requests.RecipeApi
+import com.stvayush.recipebook.networking.apiservices.RecipeApi
 import com.stvayush.recipebook.utils.Constants
 import com.stvayush.recipebook.utils.LiveDataCallAdapterFactory
 import dagger.Module

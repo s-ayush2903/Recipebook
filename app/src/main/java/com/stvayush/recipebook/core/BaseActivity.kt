@@ -1,10 +1,11 @@
-package com.stvayush.recipebook
+package com.stvayush.recipebook.core
 
 import android.view.View
 import android.widget.FrameLayout
 import android.widget.ProgressBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
+import com.stvayush.recipebook.R
 
 /**
  * Authored by s-ayush2903 on 16/7/20

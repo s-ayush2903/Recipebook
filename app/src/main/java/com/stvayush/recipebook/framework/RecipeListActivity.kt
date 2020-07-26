@@ -1,10 +1,12 @@
-package com.stvayush.recipebook
+package com.stvayush.recipebook.framework
 
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
+import com.stvayush.recipebook.core.BaseActivity
+import com.stvayush.recipebook.R
 import com.stvayush.recipebook.utils.GenericApiResponse.*
 import dagger.hilt.android.AndroidEntryPoint
 

@@ -1,4 +1,4 @@
-package com.stvayush.recipebook.requests
+package com.stvayush.recipebook.networking.serverresponses
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName

@@ -1,4 +1,4 @@
-package com.stvayush.recipebook
+package com.stvayush.recipebook.utils
 
 import androidx.fragment.app.Fragment
 

@@ -1,9 +1,9 @@
 package com.stvayush.recipebook.repo
 
 import androidx.lifecycle.LiveData
-import com.stvayush.recipebook.requests.RecipeApi
-import com.stvayush.recipebook.requests.RecipeResponse
-import com.stvayush.recipebook.requests.RecipeSearchResponse
+import com.stvayush.recipebook.networking.apiservices.RecipeApi
+import com.stvayush.recipebook.networking.serverresponses.RecipeResponse
+import com.stvayush.recipebook.networking.serverresponses.RecipeSearchResponse
 import com.stvayush.recipebook.utils.GenericApiResponse
 import javax.inject.Inject
 

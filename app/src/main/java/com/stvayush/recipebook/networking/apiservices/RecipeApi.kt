@@ -1,8 +1,9 @@
-package com.stvayush.recipebook.requests
+package com.stvayush.recipebook.networking.apiservices
 
 import androidx.lifecycle.LiveData
+import com.stvayush.recipebook.networking.serverresponses.RecipeResponse
+import com.stvayush.recipebook.networking.serverresponses.RecipeSearchResponse
 import com.stvayush.recipebook.utils.GenericApiResponse
-import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query
 
@@ -21,7 +22,7 @@ interface RecipeApi {
 
     @GET("api/get")
     fun getRecipes(
-        @Query("rId") recipeId:Int
+        @Query("rId") recipeId: Int
     ): LiveData<GenericApiResponse<RecipeResponse>>
 
 }

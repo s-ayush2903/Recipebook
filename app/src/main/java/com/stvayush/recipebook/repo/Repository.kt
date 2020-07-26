@@ -2,6 +2,7 @@ package com.stvayush.recipebook.repo
 
 import androidx.lifecycle.LiveData
 import com.stvayush.recipebook.requests.RecipeApi
+import com.stvayush.recipebook.requests.RecipeResponse
 import com.stvayush.recipebook.requests.RecipeSearchResponse
 import com.stvayush.recipebook.utils.GenericApiResponse
 import javax.inject.Inject
@@ -16,5 +17,9 @@ class Repository @Inject constructor(private val recipeApi: RecipeApi) {
         pageNo: Int
     ): LiveData<GenericApiResponse<RecipeSearchResponse>> {
         return recipeApi.searchRecipe(query, pageNo)
+    }
+
+    fun testGetFun(recipeId: Int): LiveData<GenericApiResponse<RecipeResponse>> {
+        return recipeApi.getRecipes(recipeId)
     }
 }

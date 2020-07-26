@@ -10,11 +10,9 @@ import com.stvayush.recipebook.datamodelling.Recipe
  */
 class RecipeResponse {
 
-    @SerializedName("recipes")
+    @SerializedName("recipe")
     @Expose
-    private var recipe: Recipe? = null
-
-    fun getRecipe():Recipe? = recipe
+    val recipe: Recipe? = null
 
     override fun toString(): String {
         return "RecipeResponse(recipe=$recipe)"

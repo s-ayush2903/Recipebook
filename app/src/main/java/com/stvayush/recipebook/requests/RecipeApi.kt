@@ -22,6 +22,6 @@ interface RecipeApi {
     @GET("api/get")
     fun getRecipes(
         @Query("rId") recipeId:Int
-    ): Call<RecipeResponse>
+    ): LiveData<GenericApiResponse<RecipeResponse>>
 
 }

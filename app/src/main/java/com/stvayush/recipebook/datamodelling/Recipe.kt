@@ -13,6 +13,7 @@ data class Recipe(
     val title: String?,
     val publisher: String?,
     val recipe_id: String?,
-    val social_rank: Float?
+    val social_rank: Float?,
+    val ingredients: ArrayList<String>?
 ) : Parcelable {
 }

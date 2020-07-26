@@ -16,11 +16,29 @@ class RecipeListActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_recipe_list)
         findViewById<Button>(R.id.test_button).setOnClickListener {
-            testCalls()
+            testSearch()
+            testGetter()
         }
     }
 
-    private fun testCalls() {
+    private fun testGetter() {
+        recipeListViewModel.testGet(41470).observe(this, Observer {
+            when (it) {
+                is ApiEmptyResponse -> {
+                   Log.d(TAG, "onCreate: EMPTY RESPONSE!!!")
+                }
+                is ApiErrorResponse -> {
+                   Log.d(TAG, "onCreate-API_ERROR_RESPONSE: ${it.errorMessage}")
+                }
+                is ApiSuccessResponse -> {
+                    Log.d(TAG, "testGetter: API_SUCCESS_RESPONSE-> ${it.body.recipe}")
+                    Log.d(TAG, "testGetter: PRINTING INGREDIENTS-> ${it.body.recipe?.ingredients}")
+                }
+            }
+        })
+    }
+
+    private fun testSearch() {
         recipeListViewModel.testSearch("chicken breast", 1).observe(this, Observer {
             when (it) {
                 is ApiEmptyResponse -> {

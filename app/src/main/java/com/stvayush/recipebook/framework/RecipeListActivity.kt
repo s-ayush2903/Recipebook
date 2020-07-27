@@ -19,7 +19,7 @@ class RecipeListActivity : BaseActivity() {
         setContentView(R.layout.activity_recipe_list)
         findViewById<Button>(R.id.test_button).setOnClickListener {
             testSearch()
-            testGetter()
+//            testGetter()
         }
     }
 
@@ -41,24 +41,25 @@ class RecipeListActivity : BaseActivity() {
     }
 
     private fun testSearch() {
-        recipeListViewModel.testSearch("chicken breast", 1).observe(this, Observer {
-            when (it) {
-                is ApiEmptyResponse -> {
-                    Log.d(TAG, "onCreate: EMPTY RESPONSE!!!")
-                }
-                is ApiErrorResponse -> {
-                    Log.d(TAG, "onCreate-API_ERROR_RESPONSE: ${it.errorMessage}")
-                }
-                is ApiSuccessResponse -> {
-                    Log.d(TAG, "onCreate:API_SUCCESS_RESPONSE: ${it.body.recipesList}")
-                    val resp = it.body.recipesList
-                    if (resp != null) {
-                        for (reicp in resp)
-                            Log.d(TAG, "testCalls:PRINTING RECIPES TITLE -> ${reicp.title}")
-                    }
-                }
-            }
-        })
+        recipeListViewModel.testSearch("chicken breast", 1)
+//            .observe(this, Observer {
+//            when (it) {
+//                is ApiEmptyResponse -> {
+//                    Log.d(TAG, "onCreate: EMPTY RESPONSE!!!")
+//                }
+//                is ApiErrorResponse -> {
+//                    Log.d(TAG, "onCreate-API_ERROR_RESPONSE: ${it.errorMessage}")
+//                }
+//                is ApiSuccessResponse -> {
+//                    Log.d(TAG, "onCreate:API_SUCCESS_RESPONSE: ${it.body.recipesList}")
+//                    val resp = it.body.recipesList
+//                    if (resp != null) {
+//                        for (reicp in resp)
+//                            Log.d(TAG, "testCalls:PRINTING RECIPES TITLE -> ${reicp.title}")
+//                    }
+//                }
+//            }
+//        })
     }
 
     companion object {

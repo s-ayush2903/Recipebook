@@ -14,7 +14,7 @@ import retrofit2.http.Query
 interface RecipeApi {
 
     @GET("api/search")
-    fun searchRecipe(
+    suspend fun searchRecipe(
         @Query("q") query: String,
         @Query("page") page: Int
     ): LiveData<GenericApiResponse<RecipeSearchResponse>>

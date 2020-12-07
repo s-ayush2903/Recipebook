@@ -10,23 +10,20 @@
   -  Fork the [repository](https://github.com/s-ayush2903/Recipebook.git)
   
   -  Clone the fork [repo](https://github.com/<your_username>/Recipebook)
-     - git clone https://https://github.com/<your_username>/Recipebook
+     - `git clone https://https://github.com/<your_username>/Recipebook`
     
   -  Create new branch
-     - git checkout -b <Your-Branch-Name>
+     - `git checkout -b <Your-Branch-Name>`
   
   -  Add code/scripts related to your respective issues.
-     - git add <your-contribution>
+     - `git add <your-contribution>`
  
   -  Add a commit message !
-     - git commit -a -m "<Add a message related to changes you made>"
+     - `git commit -a -m "<Add a message related to changes you made>"`
 
   -  Push changes
-    - git push origin
+    - `git push <remote_name> <branch_name>`
 
-  
-  -  Push changes
-    - git push -u origin <name_of_your_branch>
  
   -  Create pull requests
     - Mention the changes you have made. And add screenshot of before and after the changes.

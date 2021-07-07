@@ -5,6 +5,8 @@ import com.stvayush.recipebook.networking.apiservices.RecipeApi
 import com.stvayush.recipebook.networking.serverresponses.RecipeResponse
 import com.stvayush.recipebook.networking.serverresponses.RecipeSearchResponse
 import com.stvayush.recipebook.utils.GenericApiResponse
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
 
 /**
@@ -12,11 +14,16 @@ import javax.inject.Inject
  */
 
 class Repository @Inject constructor(private val recipeApi: RecipeApi) {
-    fun testSearchFun(
+    suspend fun testSearchFun(
         query: String,
         pageNo: Int
-    ): LiveData<GenericApiResponse<RecipeSearchResponse>> {
-        return recipeApi.searchRecipe(query, pageNo)
+    ): Flow<LiveData<GenericApiResponse<RecipeSearchResponse>>> = flow {
+//        emit(DataState.LOADING)
+        try {
+            recipeApi.searchRecipe(query, pageNo)
+        } catch (exc: Exception) {
+//            emit(DataState.ERROR)
+        }
     }
 
     fun testGetFun(recipeId: Int): LiveData<GenericApiResponse<RecipeResponse>> {

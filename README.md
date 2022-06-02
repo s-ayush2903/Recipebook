@@ -12,7 +12,7 @@ If interested, join the discussion at [#recipebook](https://discord.gg/F5euNCUE7
 Base Url being used for queries: 
 ~[Food2Fork.com](http://food2fork.com)~ ->  [RecipesApi](http://recipesapi.herokuapp.com/)
 
-An native-android based client where we'll be pushing us to make it close to any food deliv. application. From the backend we have, we can search recipes and ingredients being used in them and how to cook them, the backend comprises of images etc.
+An native-android based client where we'll be pushing us to make it close to any food deliv. application. From the backend what we have, we can search recipes and ingredients being used in them and how to cook them, the backend comprises of images etc.
 
 So the module will be like this:
 * We'll be having a single activity and multiple fragments attached to it.
